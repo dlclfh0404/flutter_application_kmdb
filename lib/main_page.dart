@@ -13,7 +13,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   var controller = TextEditingController();
-  dynamic body = const Center(child: Text('movies!'));
+  dynamic body = const Center(
+      child: Text(
+    '영화 검색하기',
+    style: TextStyle(
+        color: Colors.black, fontWeight: FontWeight.bold, fontSize: 50),
+  ));
 
   void searchMovie(String keyword) async {
     MovieApi movieApi = MovieApi();
@@ -57,8 +62,9 @@ class _MainPageState extends State<MainPage> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10)),
         ),
-        height: 200,
+        height: 300,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ElevatedButton.icon(
                 onPressed: () {
@@ -69,12 +75,17 @@ class _MainPageState extends State<MainPage> {
             TextFormField(
               controller: controller,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  searchMovie(controller.text);
-                  Navigator.pop(context);
-                },
-                child: const Text('검색하기'))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      searchMovie(controller.text);
+                      Navigator.pop(context);
+                    },
+                    child: const Text('검색하기')),
+              ],
+            )
           ],
         ),
       ),
