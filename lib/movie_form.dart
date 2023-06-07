@@ -8,7 +8,6 @@ class MovieForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(movie);
     var directorNm = movie['directors']['director'][0]['directorNm'];
     var actorNm = movie['actors']['actor'][0]['actorNm'];
     var posters = movie['posters'].split('|')[0];

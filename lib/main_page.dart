@@ -15,9 +15,9 @@ class _MainPageState extends State<MainPage> {
   var controller = TextEditingController();
   dynamic body = const Center(
       child: Text(
-    '영화 검색하기',
+    '🎥 영화 검색하기',
     style: TextStyle(
-        color: Colors.black, fontWeight: FontWeight.bold, fontSize: 50),
+        color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
   ));
 
   void searchMovie(String keyword) async {
